@@ -18,6 +18,11 @@ namespace UpWork.Services.Concretes
             await _applicantrepository.AddApplicant(applicant);
         }
 
+        public async Task<List<Applicant>> GetApplicantBySkills(List<string> skills)
+        {
+            return await _applicantrepository.GetApplicantBySkills(skills);
+        }
+
         public async Task DeleteApplicant(Applicant applicant)
         {
             await _applicantrepository.DeleteApplicant(applicant);

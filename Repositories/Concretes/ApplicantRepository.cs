@@ -19,6 +19,21 @@ namespace UpWork.Repositories.Concretes
             await _context.Applicants.AddAsync(applicant);
         }
 
+        public async Task<List<Applicant>> GetApplicantBySkills(List<string> skills)
+        {
+            var applicants = _context.Applicants.ToList();
+            List<Applicant> result = new List<Applicant>();
+
+            foreach (var applicant in applicants)
+            {
+                if (skills.All(item => applicant.Skills.Contains(item)))
+                {
+                    result.Add(applicant);
+                }
+            }
+
+            return result;
+        }
         public async Task DeleteApplicant(Applicant applicant)
         {
             await Task.Run(async () =>

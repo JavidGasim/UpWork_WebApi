@@ -41,7 +41,7 @@ namespace UpWork.Repositories.Concretes
 
         public async Task<List<Job>> GetJobByTags(List<string> tags)
         {
-            var jobs = _context.Jobs.ToList();
+            var jobs = await _context.Jobs.ToListAsync();
             List<Job> result = new List<Job>();
 
             foreach (var job in jobs)

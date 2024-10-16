@@ -38,7 +38,7 @@ namespace UpWork.Controllers
         {
             var user = new CustomIdentityUser
             {
-                UserName = dto.Firstname + dto.Lastname,
+                UserName = dto.Username,
                 Firstname = dto.Firstname,
                 Lastname = dto.Lastname,
                 Email = dto.Email,

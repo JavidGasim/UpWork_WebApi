@@ -45,16 +45,6 @@ namespace UpWork.Controllers
             return NotFound(new { Message = "No user found with given ID" });
         }
 
-        [HttpGet("{skills}")]
-        public async Task<List<ApplicantDTO>> Get(List<string> skills)
-        {
-            var user = await _applicantService.GetApplicantBySkills(skills);
-
-            var usersDto = _mapper.Map<List<ApplicantDTO>>(user);
-
-            return usersDto;
-        }
-
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {

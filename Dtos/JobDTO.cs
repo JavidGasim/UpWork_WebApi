@@ -16,5 +16,6 @@ namespace UpWork.Dtos
         public List<string>? ExperienceLevel { get; set; }
         public List<string>? Tags { get; set; }
         public string? Price { get; set; }
+        public bool IsDone { get; set; }
     }
 }

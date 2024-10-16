@@ -8,6 +8,7 @@ namespace UpWork.AutoMappers
     {
         public Mapper()
         {
+            CreateMap<CustomIdentityUser, UserDTO>().ReverseMap();
             CreateMap<Advertiser, AdvertiserDTO>().ReverseMap();
             CreateMap<Applicant, ApplicantDTO>().ReverseMap();
             CreateMap<Job, JobDTO>().ReverseMap();
